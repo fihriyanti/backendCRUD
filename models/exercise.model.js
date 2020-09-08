@@ -10,7 +10,7 @@ const exerciseSchema = new Schema({
 
 name: { type: String, required: true },
 hobby: { type: String, required: true },
-age: { type: Number, required: true },
+age: { type: String, required: true },
 }, {
   timestamps: true,
 });

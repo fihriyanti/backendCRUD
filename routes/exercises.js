@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const name = req.body.name;
   const hobby = req.body.hobby;
-  const age = Number(req.body.age);
+  const age = req.body.age;
 
   const newExercise = new Exercise({
     name,
@@ -38,7 +38,7 @@ router.route('/:id').get((req, res) => {
       .then(exercise => {
         exercise.name = req.body.name;
         exercise.hobby = req.body.hobby;
-        exercise.age = Number(req.body.age);
+        exercise.age = req.body.age;
         exercise.save()
           .then(() => res.json('Exercise updated!'))
           .catch(err => res.status(400).json('Error: ' + err));
